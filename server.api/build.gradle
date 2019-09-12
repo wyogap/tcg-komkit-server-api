@@ -1,0 +1,39 @@
+apply plugin: 'java'
+//apply plugin: 'eclipse'
+
+repositories {
+    google()
+    jcenter()
+    mavenLocal()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.9.8'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
+    //implementation 'com.fasterxml.jackson.core:jackson-annotation:2.9.0'
+}
+
+sourceCompatibility = SOURCE_COMPATIBILITY
+targetCompatibility = TARGET_COMPATIBILITY
+
+def projectName = 'tcg.komkit.server.api'
+def canonicalVersionCode = 507
+def canonicalVersionName = "0.0.2"
+
+version = canonicalVersionName
+
+jar {
+    archivesBaseName = projectName.replace('.', '-')
+    manifest {
+        attributes(
+                'Implementation-Title': projectName,
+                'Implementation-Version': version
+                //'Main-Class': project.mainClassName,
+        )
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

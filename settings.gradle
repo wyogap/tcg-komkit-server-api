@@ -1,0 +1,3 @@
+include ':server_api'
+
+rootProject.name = 'tcg-komkit-server-api'
