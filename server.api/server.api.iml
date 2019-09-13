@@ -32,5 +32,6 @@
     <orderEntry type="library" exported="" name="Gradle: jackson-databind-2.9.8" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jackson-core-2.9.8" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jackson-annotations-2.9.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: server.api.tcg-komkit-server-api-0.0.2" level="project" />
   </component>
 </module>
